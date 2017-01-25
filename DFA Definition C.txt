@@ -1,0 +1,45 @@
+// DFA description
+// The delta transformation is entered like a table with the Sigma letters of the alphabet
+// as the columns and the states in rows. Each entry indicates how a given state will transform for a given
+// character.
+// Example:
+// 		abc  -- Alphabet
+//
+//
+/// Example Table: 
+//	          a b c
+//  state 0 | 0 1 2  --\
+//  state 1 | 1 0 2  ---- State transformations
+//  state 2 | 2 2 2  --/
+//   etc...
+//    Each row is a state. Each column represents the character read. State is 0 (first row) is the start state. 
+//    Expected in sequential order, where each row is a state corresponding to
+//    the index of that row, 0 to n-1 where n is the number of states 
+//
+//
+//  This DFA represents an even number of 0s or exactly 3 1s. 
+//
+// Cardinality of Sigma
+2
+// Number of states
+10
+//Alphabet, no spaces.
+01
+//Transformation table -- one state per row, space separated transitions. 
+1 2
+0 3
+3 4
+2 5
+5 6
+4 7
+7 8
+6 9
+9 8
+8 9
+//Accept States -- newline separated list of accept states. 
+0
+2
+4
+6
+7
+8
